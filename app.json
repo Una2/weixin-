@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/music/music",
+    "pages/index/index",
+   
+    "pages/movie/movie",
+    "pages/logs/logs",
+    "pages/myInfo/myInfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e8e8e8",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#0ff",
+    "enablePullDownRefresh":"true"
+  },
+  "tabBar": {
+   "position":"bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "imgs/首页.png",
+        "selectedIconPath": "imgs/首页2.png"
+      },
+      {
+        "pagePath": "pages/music/music",
+        "text": "音乐",
+        "iconPath": "imgs/音频.png",
+        "selectedIconPath": "imgs/音频2.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "视频",
+        "iconPath": "imgs/视频.png",
+        "selectedIconPath": "imgs/视频2.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "imgs/日志.png",
+        "selectedIconPath": "imgs/日志2.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+<view class="audioControl">
+  <!-- 
+  播放播放控件
+  bindended：一首歌曲播放完毕时playNextMusic播放下一首歌
+  bindtimeupdate：播放时间不断变化时changeMusicLrc需要改变播放的百分比进度以及LRC歌词
+  poster:封面照片
+  name:歌曲名称
+  author:歌曲作者
+  src:播放歌曲的地址
+  id:控件唯一标识符
+  controls:音乐播放器控制条
+  -->
+  <audio bindended="playNextMusic"
+bindtimeupdate="changeMusicLrc" poster="{{music.songinfo.pic_small}}"
+name="{{music.songinfo.title}}" author="{{music.songinfo.author}}"
+ src="{{music.bitrate.show_link}}" id="myAudio" controls></audio>
+ <view class="progressBarAndLrc">
+  <!-- 进度条显示 -->
+  <progress percent="{{musicPercent}}" show-info style="padding-left:10px;padding-right:10px;"/>
+  <!-- LRC歌词显示 -->
+  <view>{{musicLineLrc}}</view>
+ </view>
+ </view>
+
+<!--
+bindscrolltolower:上拉加载更多数据时执行loadMore函数
+style:高度是一个具体固定值，通过js端计算获取
+-->
+<scroll-view bindscrolltolower="loadMore" scroll-y style="height:{{scrollHeight}}px">
+  <!-- 列表数据的循环 -->
+  <view
+  class="songList"
+  wx:for="{{songList}}"
+  wx:for-item="song"
+  wx:for-index="i" wx:key="{{i}}">
+    <!-- 图片显示 -->
+    <view class="imageBox">
+      <image class="songImgage" src="{{song.pic_small}}"></image>
+    </view>
+    <!-- 歌曲内容 -->
+    <view class="songText">
+        <view class="songTitle">{{song.title}}</view>
+        <view>{{song.language}} {{song.style}}</view>
+        <view>{{song.author}}</view>
+        <view>{{song.info}}</view>
+    </view>
+    <!-- 播放图标，并绑定事件可以触发playMusic播放音乐的函数 -->
+    <view  class="playIcon">
+       <image src="/icons/play.png" style="width:20px;height:20px;"
+         bindtap="playMusic"
+         data-songid="{{song.song_id}}"></image>
+    </view>
+  </view>
+</scroll-view>

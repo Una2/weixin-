@@ -1,0 +1,49 @@
+/* pages/music/music.wxss */
+.audioControl{
+  text-align: center;
+  padding-bottom: 5px;
+  height: 100px;
+}
+.progressBarAndLrc{
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 12px;
+}
+
+.songList{
+  display: flex;
+  border-bottom: 1px solid #f5f5f5;
+}
+.imageBox{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex:10;
+  margin:5px;
+}
+.songImgage {
+  width:80px;
+  height:80px;
+  background: gray;
+  border:10px solid #e5e5e5;
+}
+
+.songText{
+  flex:15;
+  line-height: 20px;
+  margin: 5px;
+  font-size: 12px;
+}
+.playIcon{
+ flex:5;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.songTitle {
+  font-size: 18px;
+  color:darkred;
+  padding-bottom:6px;
+}
